@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = Animal
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp
