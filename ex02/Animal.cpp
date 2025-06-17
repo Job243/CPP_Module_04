@@ -6,44 +6,44 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/14 18:47:03 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/06/17 16:19:22 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/06/17 21:08:45 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal():type("notype")
+Aanimal::Aanimal():type("notype")
 {
-	std::cout << "Default Animal constructor has been called." << std::endl;
+	std::cout << "Default Aanimal constructor has been called." << std::endl;
 }
 
-Animal::Animal(Animal const  & src)
+Aanimal::Aanimal(Aanimal const  & src)
 {
 	*this = src;
-	std::cout << "Animal copy contructor has been called." << std::endl;
+	std::cout << "Aanimal copy contructor has been called." << std::endl;
 }
 
-Animal::~Animal()
+Aanimal::~Aanimal()
 {
-	std::cout << "Animal destructor has been called." << std::endl;
+	std::cout << "Aanimal destructor has been called." << std::endl;
 }
 
-Animal & Animal::operator=(Animal const & rhs)
+Aanimal & Aanimal::operator=(Aanimal const & rhs)
 {
 	if (this != &rhs)
 	{
 		this->type = rhs.type;
 	}
-	std::cout << "Animal copy assignment operator called." << std::endl;
+	std::cout << "Aanimal copy assignment operator called." << std::endl;
 	return *this;
 }
 
-void	Animal::makeSound() const
+void	Aanimal::makeSound() const
 {
-	std::cout << "Animal makes stranges sounds." << std::endl;
+	std::cout << "Aanimal makes stranges sounds." << std::endl;
 }
 
-std::string	Animal::getType() const
+std::string	Aanimal::getType() const
 {
 	return this->type;
 }

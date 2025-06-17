@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:03:47 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/06/17 16:24:14 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/06/17 21:10:17 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,31 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	
-	i->makeSound();
-	j->makeSound();
-	meta->makeSound();
-
-	
-    std::cout << "--- WrongAnimal tests ---" << std::endl;
-
-    const WrongAnimal* animal = new WrongAnimal();
-    const WrongAnimal* cat = new WrongCat();
-
-    std::cout << cat->getType() << std::endl;
-
-    cat->makeSound();
-    animal->makeSound();
-
-    delete animal;
-    delete cat;
-
-    std::cout << "\n--- Correct Animal tests for comparison ---" << std::endl;
-
-	delete meta;
-	delete j;
+	const Aanimal* j = new Dog();
+	const Aanimal* i = new Cat();
+	delete j;//should not create a leak
 	delete i;
 
+	std::cout << "\n---Tableau d'objets Animal ---\n" << std::endl;
+	
+	const int size = 10;
+	Aanimal* animals[size];
+
+	for (int i = 0; i < size; ++i)
+	{
+		if (i < size / 2)
+			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
+	}
+
+	std::cout << "\n--- Deleting animals ---\n" << std::endl;
+
+	for (int i = 0; i < size; ++i)
+	{
+		delete animals[i];
+	}
+	
 	return 0;
 }
 
