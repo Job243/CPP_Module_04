@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 16:49:05 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/06/26 19:58:37 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/06/29 21:58:10 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Character: public ICharacter
 	protected:
 		std::string name;
 		AMateria*	inventaire[4];
+		AMateria*	floor[100];
 	public:
 		Character();
 		Character(std::string name);

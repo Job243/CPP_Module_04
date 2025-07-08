@@ -1,6 +1,6 @@
 NAME = Interfaces
 CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -g3 -std=c++98
 SRC = main.cpp AMateria.cpp Character.cpp MateriaSource.cpp
 OBJ = $(SRC:.cpp=.o)
 

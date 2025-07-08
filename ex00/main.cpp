@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:03:47 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/06/17 16:24:14 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/06/27 16:39:13 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int main()
     const WrongAnimal* cat = new WrongCat();
 
     std::cout << cat->getType() << std::endl;
+	std::cout << animal->getType() << std::endl;
 
     cat->makeSound();
     animal->makeSound();

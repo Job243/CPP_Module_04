@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 20:24:01 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/06/26 21:01:39 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/06/29 19:36:37 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ MateriaSource::MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
 		this->sourceM[i] = NULL;
-	std::cout << "Default MateriaSource has been called." << std::endl;
+	// std::cout << "Default MateriaSource has been called." << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& src)
@@ -28,7 +28,7 @@ MateriaSource::MateriaSource(const MateriaSource& src)
 		else
 			this->sourceM[i] = NULL;
 	}
-	std::cout << "MateriaSource copy constructor called." << std::endl;
+	// std::cout << "MateriaSource copy constructor called." << std::endl;
 }
 
 MateriaSource::~MateriaSource()
@@ -41,7 +41,7 @@ MateriaSource::~MateriaSource()
 			this->sourceM[i] = NULL;
 		}
 	}
-	std::cout << "MateriaSource destructor has been called." << std::endl;
+	// std::cout << "MateriaSource destructor has been called." << std::endl;
 }
 
 MateriaSource & MateriaSource::operator=(const MateriaSource& rhs)
@@ -59,7 +59,7 @@ MateriaSource & MateriaSource::operator=(const MateriaSource& rhs)
 				this->sourceM[i] = rhs.sourceM[i]->clone();
 		}
 	}
-	std::cout << "MateriaSource copy assignment operator called." << std::endl;
+	// std::cout << "MateriaSource copy assignment operator called." << std::endl;
 	return *this;
 }
 
@@ -83,7 +83,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 	{
 		if (this->sourceM[i] && this->sourceM[i]->getType() == type)
 		{
-			std::cout << "Materia of type " << type << "has beeen created." << std::endl;
+			// std::cout << "Materia of type " << type << " has beeen created." << std::endl;
 			return this->sourceM[i]->clone();
 		}
 	}

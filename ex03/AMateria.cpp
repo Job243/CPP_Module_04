@@ -6,7 +6,7 @@
 /*   By: jmafueni <jmafueni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 21:13:44 by jmafueni          #+#    #+#             */
-/*   Updated: 2025/06/25 19:56:32 by jmafueni         ###   ########.fr       */
+/*   Updated: 2025/07/04 17:58:51 by jmafueni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,29 @@
 
 AMateria::AMateria()
 {
-	std::cout << "Default AMateria constructor has been called" << std::endl;
+	// std::cout << "Default AMateria constructor has been called" << std::endl;
 }
 
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const & type):type(type)
 {
-	this->type = type;
-	std::cout << "AMateria constructor has been called" << std::endl;
+	// std::cout << "AMateria constructor has been called" << std::endl;
 }
 
-AMateria::AMateria(AMateria const & src)
+AMateria::AMateria(AMateria const & src):type(src.type)
 {
-	this->type = src.type;
-	std::cout << "AMateria copy constructor has been called" << std::endl;
+	// std::cout << "AMateria copy constructor has been called" << std::endl;
 }
 
 AMateria::~AMateria()
 {
-	std::cout << "AMateria destructor has been called" << std::endl;
+	// std::cout << "AMateria destructor has been called" << std::endl;
 }
 
 AMateria & AMateria::operator=(AMateria const & rhs)
 {
 	if (this != &rhs)
 		this->type = rhs.type;
-	std::cout << "AMateria copy assignment operator has been called" << std::endl;
+	// std::cout << "AMateria copy assignment operator has been called" << std::endl;
 	return *this;
 }
 
@@ -56,25 +54,24 @@ void AMateria::use(ICharacter& target)
 Ice::Ice()
 {
 	this->type = "ice";
-	std::cout << "Defaul Ice constructor has been called." << std::endl;
+	// std::cout << "Defaul Ice constructor has been called." << std::endl;
 }
 
 Ice::Ice(const Ice& src):AMateria(src)
 {
-	*this = src;
-	std::cout << "Ice copy constructor has been called." << std::endl;
+	// std::cout << "Ice copy constructor has been called." << std::endl;
 }
 
 Ice::~Ice()
 {
-	std::cout << "Ice destructor called." << std::endl;
+	// std::cout << "Ice destructor called." << std::endl;
 }
 
 Ice & Ice::operator=(const Ice& rhs)
 {
 	if (this != &rhs)
-		this->type = rhs.type;
-	std::cout << "Ice copy assignment operator has been called." << std::endl;
+		AMateria::operator=(rhs);
+	// std::cout << "Ice copy assignment operator has been called." << std::endl;
 	return *this;
 	
 }
@@ -92,25 +89,24 @@ void Ice::use(ICharacter& target)
 Cure::Cure()
 {
 	this->type = "cure";
-	std::cout << "Defaul Cure constructor has been called." << std::endl;
+	// std::cout << "Defaul Cure constructor has been called." << std::endl;
 }
 
 Cure::Cure(const Cure& src):AMateria(src)
 {
-	*this = src;
-	std::cout << "Cure copy constructor has been called." << std::endl;
+	// std::cout << "Cure copy constructor has been called." << std::endl;
 }
 
 Cure::~Cure()
 {
-	std::cout << "Cure destructor called." << std::endl;
+	// std::cout << "Cure destructor called." << std::endl;
 }
 
 Cure & Cure::operator=(const Cure& rhs)
 {
 	if (this != &rhs)
-		this->type = rhs.type;
-	std::cout << "Cure copy assignment operator has been called." << std::endl;
+		AMateria::operator=(rhs);
+	// std::cout << "Cure copy assignment operator has been called." << std::endl;
 	return *this;
 	
 }
